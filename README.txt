@@ -1,0 +1,9 @@
+#####################
+# Personal IT tools #
+#####################
+
+# Clone the repo
+git clone git@github.com:GuillaumeMuret/Misc.git
+
+# If you want to launch the first init computer script :
+./Misc/scripts/first_init_computer.sh
