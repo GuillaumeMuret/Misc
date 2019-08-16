@@ -45,6 +45,9 @@ cd ~
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+# Install vim
+sudo apt-get install -y vim
+
 # Misc management
 cd ${CURRENT_DIR}
 cp ../configs/home/.bash_aliases ~/.bash_aliases
