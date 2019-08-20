@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# colors
+export RED='\033[1;31m'
+export GREEN='\033[1;32m'
+export YELLOW='\033[1;33m'
+export BLUE='\033[1;34m'
+export NC='\033[0m'
+
+
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # Update all package !
@@ -67,3 +75,13 @@ cp ../configs/home/.config/terminator/config ~/.config/terminator/
 # Sublime use keybind
 mkdir -p ~/.config/sublime-text-3/Packages/User
 cp "../configs/home/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap" ~/.config/sublime-text-3/Packages/User/
+
+# Vim init
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# Vim rc init
+cp ../configs/home/.vimrc ~/
+
+echo -e "${RED}Force theme update for gruvbox ${NC}"
+git clone https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox
+cp ~/.vim/bundle/gruvbox/colors/gruvbox.vim /usr/share/vim/vim74/colors/
