@@ -55,6 +55,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 # Install vim
 sudo apt-get install -y vim
+sudo apt-get install -y vim-gnome
 
 # Misc management
 cd ${CURRENT_DIR}

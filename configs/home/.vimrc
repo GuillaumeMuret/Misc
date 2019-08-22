@@ -16,6 +16,7 @@ let g:lightline = {
 
 let NERDTreeMapOpenInTab='\t'
 nnoremap <F2> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
