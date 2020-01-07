@@ -1,22 +1,6 @@
+" VUNDLE config
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
-set number
-set laststatus=2
-colorscheme gruvbox 
-if !has('gui_running')
-	set t_Co=256
-endif
-
-set bg=dark
-set cursorline
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
-
-let NERDTreeMapOpenInTab='\t'
-nnoremap <F2> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -62,4 +46,56 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+
+" Personal config
+set number
+set nowrap
+let mapleader=","
+
+" Personal theme
+set laststatus=2
+colorscheme gruvbox 
+if !has('gui_running')
+	set t_Co=256
+endif
+set bg=dark
+set shiftwidth=4
+set cursorline
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+
+" Nerdtree config
+let NERDTreeMapOpenInTab='\t'
+nnoremap <F4> :browse oldfiles<CR>
+nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeToggle %<CR>
+let NERDTreeShowHidden=1
+
+" Split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Fast move
+nnoremap <S-H> <S-LEFT>
+nnoremap <S-L> <S-RIGHT>
+nnoremap <S-J> <S-DOWN>
+nnoremap <S-K> <S-UP>
+
+" JJ -> ESC (normal mode)
+inoremap jj <ESC>
+
+" Copy paste izy
+vnoremap <Leader>y "*y
+vnoremap <Leader>p "*p
+vnoremap <Leader>Y "+y
+vnoremap <Leader>P "+p
+
+" switch of buffer (TAB / SHIFT-TAB)
+nnoremap <silent> <tab> :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+nnoremap <silent> <s-tab> :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+nnoremap <C-W> :bd<CR>
 
