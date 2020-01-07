@@ -1,14 +1,14 @@
 #!/bin/bash
 
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+OUT_DIR=${CURRENT_DIR}/../configs/home/
 
-
-cp ~/.oh-my-zsh/custom/themes/guigui.zsh-theme ${CURRENT_DIR}/../configs/home/.oh-my-zsh/custom/themes/guigui.zsh-theme
-cp ~/.bash_aliases ${CURRENT_DIR}/../configs/home/.bash_aliases
-cp ~/.bashrc ${CURRENT_DIR}/../configs/home/.bashrc
-cp ~/.git-prompt.sh ${CURRENT_DIR}/../configs/home/.git-prompt.sh
-cp ~/.minirc.dfl ${CURRENT_DIR}/../configs/home/.minirc.dfl
-cp ~/.zshrc ${CURRENT_DIR}/../configs/home/.zshrc
-cp ~/.profile ${CURRENT_DIR}/../configs/home/.profile
-cp ~/.vimrc ${CURRENT_DIR}/../configs/home/.vimrc
-cp ~/.ssh/config ${CURRENT_DIR}/../configs/home/.ssh/config
+cp ~/.oh-my-zsh/custom/themes/guigui.zsh-theme ${OUT_DIR}/.oh-my-zsh/custom/themes/guigui.zsh-theme
+cp ~/.bash_aliases ${OUT_DIR}/.bash_aliases
+cp ~/.bashrc ${OUT_DIR}/.bashrc
+cp ~/.git-prompt.sh ${OUT_DIR}/.git-prompt.sh
+cp ~/.minirc.dfl ${OUT_DIR}/.minirc.dfl
+cp ~/.zshrc ${OUT_DIR}/.zshrc
+cp ~/.profile ${OUT_DIR}/.profile
+cp ~/.vimrc ${OUT_DIR}/.vimrc
+cp ~/.ssh/config ${OUT_DIR}/.ssh/config
