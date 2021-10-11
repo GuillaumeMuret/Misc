@@ -9,7 +9,13 @@ alias gs="git status"
 alias clear_tags="git tag -l | xargs git tag -d && git fetch --tags"
 alias get_all_guigui_commit="git log --author=\"Guillaume Muret\" --format=\"%H\" | sed 's/$/^!/g' | xargs -I{} git format-patch {}"
 gt() {
-    git log --graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" | fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort --header "Press CTRL-S to toggle sort" --preview "echo {} | grep -o '[a-f0-9]\{7\}' | head -1 | xargs -I % sh -c 'git show --color=always % | head -$LINES'" --bind "enter:execute:echo {} | grep -o '[a-f0-9]\{7\}' | head -1 | xargs -I % sh -c 'vim fugitive://\$(git rev-parse --show-toplevel)/.git//% < /dev/tty'"
+    git log --branches --remotes --tags --graph --oneline --decorate --date-order \
+    	--color=always \
+    	--format="%C(auto)%h%d %s %C(black)%C(bold)%cr" \
+    	"$@" | fzf --ansi --no-sort --reverse --tiebreak=index \
+    	--bind=ctrl-s:toggle-sort --header "Press CTRL-S to toggle sort" \
+    	--preview "echo {} | grep -o '[a-f0-9]\{7\}' | head -1 | xargs -I % sh -c 'git show --color=always % | head -10000'" \
+    	--bind "enter:execute:echo {} | grep -o '[a-f0-9]\{7\}' | head -1 | xargs -I % sh -c 'vim fugitive://\$(git rev-parse --show-toplevel)/.git//% < /dev/tty'"
 }
 alias resetAllRepo="repo forall -c \"git reset --hard ; git clean -fdx\""
 
